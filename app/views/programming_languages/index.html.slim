@@ -1,6 +1,7 @@
 h1 Programming languages:
 
-ol
+ol.programming-language-list
   - programming_languages.each do |programming_language|
-    li
-      = link_to(programming_language.name, programming_language.path)
+    li.programming-language-list-item
+      = link_to(programming_language.path) do
+        .name= programming_language.name
