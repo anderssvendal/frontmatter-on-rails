@@ -58,6 +58,16 @@ h1 {
   background: #dee2e6;
 }
 
+.programming-language-list-item .name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.programming-language-list-item .tagline {
+  font-style: italic;
+}
+
 article p {
   font-size: 20px;
   line-height: 1.3;

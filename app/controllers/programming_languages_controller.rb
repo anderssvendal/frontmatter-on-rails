@@ -6,8 +6,25 @@ class ProgrammingLanguagesController < ApplicationController
   end
 
   def show
-    programming_language = ProgrammingLanguage.find!(params[:language])
+    raise ActiveRecord::RecordNotFound unless programming_language?
 
+    # Render the file for the programming language
     render programming_language.slug
+  end
+
+  private
+
+  def programming_language
+    return nil unless params[:language].present?
+
+    ProgrammingLanguage.find(params[:language])
+  end
+
+  def programming_language?
+    programming_language.present?
+  end
+
+  def page_title
+    programming_language.try(:page_title) || super
   end
 end

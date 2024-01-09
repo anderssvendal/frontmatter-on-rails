@@ -52,6 +52,7 @@ class ProgrammingLanguage
   end
 
   def slug
+    # The filename for the template, extension(s) removed
     pathname.basename.to_s.split('.').first
   end
 
@@ -59,12 +60,24 @@ class ProgrammingLanguage
     "/#{slug}"
   end
 
-  def name
-    frontmatter_data['name']
+  [
+    'first_introduced',
+    'name',
+    'tagline',
+  ].each do |attribute|
+    # attribute: Get the value of attribute from frontmatter_data
+    define_method(attribute) do
+      frontmatter_data[attribute]
+    end
+
+    # attribute?: check if attribute is present?
+    define_method("#{attribute}?") do
+      send(attribute).present?
+    end
   end
 
-  def first_introduced
-    frontmatter_data['first_introduced']
+  def page_title
+    frontmatter_data['page_title'].presence || "The #{name} Progamming Language"
   end
 
   def <=>(other)
