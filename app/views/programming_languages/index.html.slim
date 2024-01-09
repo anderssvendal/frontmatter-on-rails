@@ -1,2 +1,6 @@
-h1 ProgrammingLanguages#index
-p Find me in app/views/programming_languages/index.html.slim
+h1 Programming languages:
+
+ol
+  - programming_languages.each do |programming_language|
+    li
+      = link_to(programming_language.name, programming_language.path)
