@@ -1,24 +1,7 @@
-# README
+![](https://github.com/anderssvendal/frontmatter-on-rails/assets/206627/ec40be0a-5ba5-444b-a33d-7b72ca6975da")
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Frontmatter on Rails!
 
-Things you may want to cover:
+Code from a blog post about adding support for Frontmatter to Rails.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Read the blog post](https://blog.tight.no/tech/frontmatter-on-rails)
